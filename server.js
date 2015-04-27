@@ -5,8 +5,10 @@ var express = require( 'express' ),
     app = express(),
     server = http.createServer( app );
 
-app.get( '/src' , function ( req, res ) {
-  fs.readFile( 'index.html' , function( error , data ){
+app.use( '/static/' , express.static( __dirname  ));
+
+app.get( '/' , function ( req, res ) {
+  fs.readFile( 'src/gnb.html' , function( error , data ){
     if( error ){
       console.log( error );
     } else {

@@ -1,0 +1,12 @@
+html, body{ margin : 0 }
+a{ text-decoration : none; display: block  }
+ul{list-style:none}
+
+
+.gnb:after{ content : ''; display:block; clear:both }
+.gnb > li { float : left; margin-right:10px; background-color: #efefef ; border : 1px solid #666 }
+.gnb > li.on{ background-color : #f00; font-weight : bold }
+
+.gnb > li ul{ display: none }
+.gnb > li ul{ background-color : orange ; border : 1px solid #f00 }
+.gnb a:focus, .gnb a:hover{ background-color : #f00 ; font-weight:bold }

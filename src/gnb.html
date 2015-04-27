@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>GNB - dropdown menu</title>
+    <link rel="stylesheet" href="/static/src/style.css">
+    <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div id="contents">
+        <ul class="gnb">
+            <li><a href="#">Depth 1 - parent1</a>
+                <ul>
+                    <li><a href="#">Depth 2 - children index1 </a></li>
+                    <li><a href="#">Depth 2 - children index2 </a></li>
+                    <li><a href="#">Depth 2 - children index3 </a></li>
+                    <li><a href="#">Depth 2 - children index4 </a></li>
+                    <li><a href="#">Depth 2 - children index5 </a></li>
+                </ul>
+            </li>
+            <li><a href="#">Depth 1 - parent2</a>
+                <ul>
+                    <li><a href="#">Depth 2 - children index1 </a></li>
+                    <li><a href="#">Depth 2 - children index2 </a></li>
+                    <li><a href="#">Depth 2 - children index3 </a></li>
+                    <li><a href="#">Depth 2 - children index4 </a></li>
+                    <li><a href="#">Depth 2 - children index5 </a></li>
+                </ul>
+            </li>
+            <li><a href="#">Depth 1 - parent4</a>
+                <ul>
+                    <li><a href="#">Depth 2 - children index1 </a></li>
+                    <li><a href="#">Depth 2 - children index2 </a></li>
+                    <li><a href="#">Depth 2 - children index3 </a></li>
+                    <li><a href="#">Depth 2 - children index4 </a></li>
+                    <li><a href="#">Depth 2 - children index5 </a></li>
+                </ul>
+            </li>
+            <li><a href="#">Depth 1 - parent3</a>
+                <ul>
+                    <li><a href="#">Depth 2 - children index1 </a></li>
+                    <li><a href="#">Depth 2 - children index2 </a></li>
+                    <li><a href="#">Depth 2 - children index3 </a></li>
+                    <li><a href="#">Depth 2 - children index4 </a></li>
+                    <li><a href="#">Depth 2 - children index5 </a></li>
+                </ul>
+            </li>
+            <li><a href="#">Depth 1 - parent5</a>
+                <ul>
+                    <li><a href="#">Depth 2 - children index1 </a></li>
+                    <li><a href="#">Depth 2 - children index2 </a></li>
+                    <li><a href="#">Depth 2 - children index3 </a></li>
+                    <li><a href="#">Depth 2 - children index4 </a></li>
+                    <li><a href="#">Depth 2 - children index5 </a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="/static/dist/gnb.js"></script>
+    <script>
+        $( function (){
+            $( '.gnb' ).dropdownMenu();
+        });
+    </script>
+</body>
+</html>

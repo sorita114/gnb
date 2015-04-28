@@ -12,6 +12,20 @@
       @_name = pluginName;
       @init()
 
+    toggleMenu = ( el ) ->
+      el
+      .closest 'li'
+      .addClass 'on'
+
+      el
+      .next()
+      .show()
+      .closest 'li'
+      .siblings()
+      .removeClass 'on'
+      .find 'ul'
+      .hide()
+
     init : ->
       $el = $ @element
       $el.on 'mouseleave' , ( e ) ->
@@ -26,33 +40,32 @@
 
       $el
       .find '> li'
-      .find 'a'
-      .on 'mouseenter' , ( e ) ->
-        $this = $ @
-        $this
-        .closest 'li'
-        .addClass 'on'
-
-        $this
-        .next()
-        .show()
-        .closest 'li'
-        .siblings()
-        .removeClass 'on'
-        .find 'ul'
-        .hide()
-        return
-
-      $el
-      .find '> li'
-      .find 'a'
-      .on 'keydown' , ( e ) ->
+      .find '> a'
+      .on 'mouseenter keydown' , ( e ) ->
         $this = $ @
         keyCode = e.keyCode
 
-        if keyCode == 9
-          alert 'a'
-        return
+        if keyCode is undefined
+          toggleMenu $this
+        else if keyCode is 9 and e.shiftKey is false
+          toggleMenu $this
+      .next()
+      .find '> li:last'
+      .find '> a'
+      .on 'focusout' , ( e ) ->
+        $this = $ @
+
+        len = $this
+              .closest '.on'
+              .next().length
+
+        if len is 0
+          $this
+          .closest '.on'
+          .removeClass 'on'
+          .find 'ul'
+          .hide()
+
       return
 
   $.fn[ pluginName ] = ( options ) ->
